@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CarrinhoService } from '../carrinho.service';
 
 @Component({
   selector: 'app-shipping',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShippingComponent implements OnInit {
 
-  constructor() { }
+  shippingCosts;
+
+  constructor(
+    private carrinhoService: CarrinhoService
+  ) { }
 
   ngOnInit() {
+
+    this.shippingCosts = this.carrinhoService.getShippingPrices();
   }
 
 }
