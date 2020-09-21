@@ -9,6 +9,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CarrinhoService } from './carrinho.service';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 
 
 
@@ -19,6 +20,7 @@ import { CarrinhoService } from './carrinho.service';
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
+      { path: 'carrinho', component: CarrinhoComponent },
       
     ])
   ],
@@ -28,6 +30,7 @@ import { CarrinhoService } from './carrinho.service';
     ProductListComponent,
     ProductAlertsComponent,
     ProductDetailsComponent,
+    CarrinhoComponent,
     
   ],
   bootstrap: [ AppComponent ],
