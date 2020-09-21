@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,7 +10,9 @@ export class CarrinhoService {
 
   items = [];
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   adicionaNoCarrinho(product){
     this.items.push(product);
@@ -22,6 +25,10 @@ export class CarrinhoService {
   limparCarrinho(){
     this.items = [];
     return this.items;
+  }
+
+  getShippingPrices(){
+    return this.http.get('/asserts/getShippingPrices.json');
   }
 
 
