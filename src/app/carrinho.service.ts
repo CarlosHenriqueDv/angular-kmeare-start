@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +28,7 @@ export class CarrinhoService {
   }
 
   getShippingPrices(){
-    return this.http.get('/asserts/getShippingPrices.json');
+    return this.http.get('/assets/shipping.json');
   }
 
 
